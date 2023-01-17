@@ -4,6 +4,28 @@
 </head>
 <body>
   <nav>
+    <i class="fas fa-sharp fa-solid fa-calendar-star"></i>
+    <a 
+      href="/" <%- title === 'All Events' ? 'class="active"' : '' %>
+    >
+      ALL EVENTS
+    </a>
+     -  
+    <a 
+      href="/events/new" <%- title === 'Add Event' ? 'class="active"' : '' %>
+    >
+      ADD EVENT
+  </a>
+     - 
+      <a 
+			href="/events/new"
+			<%- title === 'Add Location' ? 'class="active"' : '' %>
+		>
+			ADD LOCATION
+    </a>
+
+
+
     <% if (user) { %>
       <a href="/auth/logout" class="right">
         <button type="submit">Logout</button>
