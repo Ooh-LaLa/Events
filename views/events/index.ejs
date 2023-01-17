@@ -7,11 +7,9 @@
   <table>
     <thead>
       <tr>
-        <th>Airline</th>
-        <th>Airport</th>
-        <th>FlightNo</th>
-        <th>Departs</th>
-        <th>Details</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Attended</th>
       </tr>
     </thead>
     <tbody>
@@ -19,11 +17,16 @@
       <%# Write the line of EJS to iterate over movies using forEach #%>
       <% flights.forEach(flight => { %>
         <tr> 
-          <td><%= flight.airline %></td>
-          <td><%= flight.airport %></td>
-          <td><%= flight.flightNo %></td>
-          <td><%= flight.departs %></td>
-          <td><a href="flights/<%= flight._id %>">Details</button></td>
+          <td><%= event.name %></td>
+          <td><%= event.date %></td>
+          <td><%= event.attended %></td>
+          <td><a href="events/<%= event._id %>">Event Details</button></td>
+            <form 
+            action="/events/<%= event._id %>?_method=DELETE" 
+            method="POST"
+          >
+            <button>X</button>
+            </form>
         </tr>
      <% }) %>
     </tbody>

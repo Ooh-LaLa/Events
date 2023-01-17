@@ -4,11 +4,14 @@ import mongoose from 'mongoose'
 const Schema = mongoose.Schema
 	
 const eventSchema = new Schema({
-  
-  location: { type: Schema.Types.ObjectId, ref: "Location"},
-  attended: {type: Boolean},
-  date: {type: Date}},
-  {timestamps: true,
+  name: {type: String, required: true},
+  location: { type: Schema.Types.ObjectId, ref: "Location", required: true},
+  attended: {type: Boolean, default: false},
+  date: {type: Date},
+  price: {type: Number},
+  notes: {type: String},
+}, 
+{timestamps: true,
   })
 
 const Event = mongoose.model('Event', eventSchema)
