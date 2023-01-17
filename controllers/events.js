@@ -15,10 +15,11 @@ function create(req, res) {
   console.log("REQ.BODY", req.body)
   Event.create(req.body)
   .then(event => {
-    res.redirect('/events')
+    res.redirect('/')
   })
   .catch(err => {
-    res.redirect('/events')
+    console.log("error", err)
+    res.redirect('/')
   })
 }
 
@@ -101,6 +102,7 @@ function edit(req, res) {
 //     res.redirect("/")
 //   })
 // }
+
 
 
 export {

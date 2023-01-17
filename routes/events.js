@@ -3,12 +3,13 @@ import * as eventsCtrl from '../controllers/events.js'
 
 const router = Router()
 
+
 // GET /events/new
 router.get('/new', eventsCtrl.new)
 
 
 // POST /events
-router.post('/', eventsCtrl.create)
+router.post('/new', eventsCtrl.create)
 
 
 // localhost:3000/events/:id
@@ -22,6 +23,10 @@ router.get("/:id/edit", eventsCtrl.edit)
 
 // localhost:3000/movies/:id
 // router.put("/:id", eventsCtrl.update)
+
+
+// GET /flights/show
+router.get('/:id', eventsCtrl.show)
 
 
 export {

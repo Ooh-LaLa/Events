@@ -3,7 +3,9 @@ import * as locationsCtrl from '../controllers/locations.js'
 
 const router = Router()
 
-router.get('/new', locationsCtrl.new)
+router.get('/', locationsCtrl.new)
+
+router.post('/', locationsCtrl.create)
 
 export {
   router
