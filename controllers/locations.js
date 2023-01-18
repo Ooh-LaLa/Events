@@ -52,7 +52,7 @@ function show(req, res) {
   .then(location => {
     Location.find
       res.render('locations/show', {
-        title: 'Location Detail', 
+        title: 'Location Details', 
         location: location,
       })
     })
