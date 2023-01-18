@@ -5,90 +5,65 @@
 <main>
   <h1><%= title %></h1>
   <section>
-    <div>Title: </div>
+    <div>Event: </div>
     </div>
-    <div>Airline: </div>
-    <div><%= flight.airline %></div>
-    <div>Airport: </div>
-    <div><%= flight.airport %></div>
-    <div>Flight Number: </div>
-    <div><%= flight.flightNo %></div>
-    <div>Departs: </div>
-    <div><%= flight.departs %></div>
-</section>
-
-
-<section>
-   <% if (flight.tickets.length) { %>
-    <h3>Tickets</h3>
-    <table>
-      <thead>
-        <tr>
-          <th>Seat</th>
-          <th>Price</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% flight.tickets.forEach(function(ticket) { %>
-          <tr>
-            <td><%= ticket.seat %></td>
-            <td><%= ticket.price %></td>
-          </tr>
-        <% }) %>
-      </tbody>
-    </table>
-  <% } else { %>
-    <h3>No Tickets Yet</h3>
-  <% } %>
+    <div>Location: </div>
+    <div><%= event.location%></div>
+    <div>: </div>
+    <div><%= event.date %></div>
+    <div>Attended: </div>
+    <div><%= event.attended %></div>
+    <div>Price: </div>
+    <div><%= event.price %></div>
 </section>
 
 <section>
-  <form id="new-form" action="/flights/<%= flight._id %>/tickets" method="POST">
-    <label for="seat-input">Seat:</label>
-    <input name="seat" required pattern="[A-F][1-9]\d?" type="String">
-    <label for="price-input">Price:</label>
-    <input type="Number" name="price">
-    <button type="submit">Add Ticket</button>
-  </form>
-</section>
-
-<section>
-  <h3>Meals</h3>
-  <% if (flight.meals.length) { %>
+  <h3>Location</h3>
+  <% if (event.locations.length) { %>
    <table>
      <tbody>
-       <% flight.meals.forEach(function(meal) { %>
+       <% event.locations.forEach(function(location) { %>
          <tr>
-           <td><%= meal.name %></td>
+           <td><%= location.name %></td>
          </tr>
        <% }) %>
      </tbody>
    </table>
  <% } else { %>
-   <h3>No Meals Yet</h3>
+   <h3>No Locations Yet</h3>
  <% } %>
 </section>
 
 
 <section> 
 <form
-    id="add-meal-form"
-    action="/flights/<%= flight._id %>/meals"
+    id="add-location-form"
+    action="/events/<%= event._id %>/locations"
     method="POST"
   >
-    <label for="meal-select">Meal:</label>
-    <select name="mealSelect" id="meal-select">
-      <% meals.forEach(function(meal) { %>
-        <option value="<%= meal._id %>"><%= meal.name %></option>
+    <label for="location-select">Location:</label>
+    <select name="locationSelect" id="location-select">
+      <% locations.forEach(function(location) { %>
+        <option value="<%= location._id %>"><%= location.name %></option>
       <% }) %>
     </select>
-    <button type="submit">Add Meal</button>
+    <button type="submit">Add Location</button>
   </form>
   <div>
     <%= event.title %> 
-    <a href="/events/<%= event._id %>/edit">
-      <button>Edit Event</button>
+    <a href="/locations/<%= location._id %>/edit">
+      <button>Edit Location</button>
     </a>
+    <td>
+      <a href="/movies/<%= movie._id %>">DETAILS</a></td>
+          <td>
+            <form 
+              action="/locations/<%= location._id %>?_method=DELETE"
+              method="POST"
+            >
+              <button>X</button>
+            </form>
+          </td>
   </div>
 </section>
 

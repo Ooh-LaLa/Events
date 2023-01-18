@@ -7,19 +7,22 @@
   <table>
     <thead>
       <tr>
-        <th>Name</th>
-        <th>Address</th>
-        <th>Attended</th>
+        <th>Name:</th>
+        <th>Address:</th>
+        <th>Attended:</th>
       </tr>
     </thead>
     <tbody>
       <%# Oh hey, this is an ejs comment! It starts with a # %>
       <%# Write the line of EJS to iterate over movies using forEach #%>
-      <% flights.forEach(flight => { %>
+      <% events.forEach(event => { %>
         <tr> 
           <td><%= event.name %></td>
           <td><%= event.date %></td>
           <td><%= event.attended %></td>
+          <td><%= event.location %></td>
+          <td><%= event.price %></td>
+          <td><%= event.notes %></td>
           <td><a href="events/<%= event._id %>">Event Details</button></td>
             <form 
             action="/events/<%= event._id %>?_method=DELETE" 

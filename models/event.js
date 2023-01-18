@@ -5,8 +5,8 @@ const Schema = mongoose.Schema
 	
 const eventSchema = new Schema({
   name: {type: String, required: true},
-  location: { type: Schema.Types.ObjectId, ref: "Location", required: true},
-  attended: {type: Boolean, default: false},
+  location: { type: Schema.Types.ObjectId, ref: "Location"},
+  attended: {type: String},
   date: {type: Date},
   price: {type: Number},
   notes: {type: String},

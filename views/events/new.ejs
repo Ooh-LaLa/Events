@@ -5,15 +5,31 @@
 <main>
     <h1><%= title %></h1>
     <form id="new-form" action="/events/new" method="POST">
-      <label for="location-input">Event:</label>
-      <input required type="string" name="location" id="location-input">
+      <label for="name-input">Event:</label>
+      <input required type="string" name="name" id="name-input">
+    
+      <label for="location-select">Location:</label>   
+      <select name="locationSelect" id="location-select">
+        <% locations.forEach(function(location) { %>
+          <option value="<%= location._id %>"><%= location.name %></option>
+        <% }) %>
+      </select>
+      
       <label for="date-input">Date:</label>
       <input type="datetime-local" name="date" id="date-input">
-      <label for="attended">Attended:</label>
-      <select name="attended" id="attended-select">
-          <option value="Yes">Yes</option>
+      
+      <label for="attended-input">Attended:</label>
+      <select name="attended" id="attended-select default=No">
+        <option value="Yes">Yes</option>
           <option value="No">No</option>
       </select>
+
+      <label for="price-input">Price:</label>
+      <input type="number" name="price" id="price-input">
+
+      <label for="notes-input">Notes:</label>
+      <input type="text-area" name="notes" id="price-input">
+          
       <button type="submit">Add Event</button>
     </form>
   </main>

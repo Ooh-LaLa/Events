@@ -7,6 +7,15 @@ router.get('/', locationsCtrl.new)
 
 router.post('/', locationsCtrl.create)
 
+router.get('/:id', locationsCtrl.show)
+
+
+router.get('/:id/edit', locationsCtrl.edit)
+
+router.delete("/:id", locationsCtrl.delete)
+
+
+
 export {
   router
 }

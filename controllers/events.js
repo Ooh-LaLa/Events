@@ -1,10 +1,21 @@
 import { Event } from '../models/event.js'
+import { Location } from "../models/location.js"
 
 
-function newEvent(req, res) {
-  res.render("events/new", {
+
+function newEvent(req, res) { 
+  Location.find({})
+.then(locations => {
+  res.render('events/new', {
+    locations: locations,
     title: "Add Event",
   })
+})
+.catch(error => {
+  console.log(error)
+  // redirect to localhost:3000
+  res.redirect('/')
+})
 }
 
 function create(req, res) {
@@ -41,15 +52,14 @@ function index(req, res) {
 
 
 
-
 function show(req, res) {
   Event.findById(req.params.id)
   .populate('locations')
-  .then(flight => {
+  .then(event => {
     Location.find({_id: {$nin: event.locations}})
     .then(locations => {
-      res.render('flights/show', {
-        title: 'Flight Detail', 
+      res.render('events/show', {
+        title: 'Event Detail', 
         event: event,
         locations: locations,
       })
@@ -88,22 +98,6 @@ function edit(req, res) {
   })
 }
 
-// function update(req, res) {
-//   req.body.nowShowing = !!req.body.nowShowing
-//   for (let key in req.body) {
-//     if(req.body[key] === "") delete req.body[key]
-//   }
-//   Movie.findByIdAndUpdate(req.params.id, req.body, {new: true})
-//   .then(movie => {
-//     res.redirect(`/movies/${movie._id}`)
-//   })
-//   .catch(err => {
-//     console.log(err)
-//     res.redirect("/")
-//   })
-// }
-
-
 
 export {
   newEvent as new,
@@ -112,5 +106,4 @@ export {
   show,
   deleteEvent as delete, 
   edit,
-  // update
 }
