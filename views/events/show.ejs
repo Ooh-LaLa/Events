@@ -19,10 +19,10 @@
 
 <section>
   <h3>Location</h3>
-  <% if (event.locations.length) { %>
+  <% if (event.location) { %>
    <table>
      <tbody>
-       <% event.locations.forEach(function(location) { %>
+       <% event.location.forEach(function(location) { %>
          <tr>
            <td><%= location.name %></td>
          </tr>
@@ -38,12 +38,12 @@
 <section> 
 <form
     id="add-location-form"
-    action="/events/<%= event._id %>/locations"
+    action="/events/<%= event._id %>/location"
     method="POST"
   >
     <label for="location-select">Location:</label>
     <select name="locationSelect" id="location-select">
-      <% locations.forEach(function(location) { %>
+      <% location.forEach(function(location) { %>
         <option value="<%= location._id %>"><%= location.name %></option>
       <% }) %>
     </select>

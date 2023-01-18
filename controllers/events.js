@@ -54,14 +54,15 @@ function index(req, res) {
 
 function show(req, res) {
   Event.findById(req.params.id)
-  .populate('locations')
+  .populate('location')
   .then(event => {
-    Location.find({_id: {$nin: event.locations}})
-    .then(locations => {
+    Location.find()
+    .then(location => {
+      console.log("It's working!!");
       res.render('events/show', {
-        title: 'Event Detail', 
+        title: 'Event Details', 
         event: event,
-        locations: locations,
+        location: location,
       })
     })
     .catch(err => {
@@ -70,6 +71,7 @@ function show(req, res) {
     })
   })
 }
+
 
 
 

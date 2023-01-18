@@ -1,9 +1,10 @@
 <%- include('../partials/html-head') %>
 <!-- <link rel="stylesheet" href="/stylesheets/style.css" /> -->
 <%- include('../partials/nav') %>
-
 <main>
-  <h1>Events</h1>
+<section>
+  <h1><%= title %></h1>
+  <% if (events.length) { %>
   <table>
     <thead>
       <tr>
@@ -39,6 +40,10 @@
      <% }) %>
     </tbody>
   </table>
+  <% } else { %>
+    <h3>No Events Yet</h3>
+  <% } %>
+ </section>
 
 
 </main>
