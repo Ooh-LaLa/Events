@@ -5,7 +5,7 @@ _To start planning, [click here](https://events-application.fly.dev/)_
 
 
 
-![](images/screenshot.png)
+![](/public/images/screenshot.png)
 
 
 
