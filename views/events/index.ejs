@@ -22,7 +22,9 @@
       <% events.forEach(event => { %>
         <tr> 
           <td><%= event.name %></td>
-          <td><%= event.location %></td>
+        <td><% if (event.location) { %>
+          <%= event.location.name %>
+          <% } %></td>
           <td><%= event.date %></td>
           <td><%= event.attended %></td>
           <td><%= event.price %></td>

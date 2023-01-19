@@ -37,7 +37,9 @@ function create(req, res) {
 
 function index(req, res) {
   Event.find({})
+  .populate('location')
   .then(events => {
+    console.log("TEST", events);
     res.render('events/index', {
       events: events,
       title: "All Events",

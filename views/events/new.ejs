@@ -9,7 +9,7 @@
       <input required type="string" name="name" id="name-input">
     
       <label for="location-select">Location:</label>   
-      <select name="locationSelect" id="location-select">
+      <select name="location" id="location-select">
         <% locations.forEach(function(location) { %>
           <option value="<%= location._id %>"><%= location.name %></option>
         <% }) %>
