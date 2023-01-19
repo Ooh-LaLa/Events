@@ -130,7 +130,7 @@ main {
     padding: 3px;
     font-weight: bold;
     text-align: center;
-    border-radius: 12%;
+    border-radius: 5%;
 }
 
 .button:hover {background-color: white}
