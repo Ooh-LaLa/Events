@@ -133,7 +133,40 @@ main {
     border-radius: 5%;
 }
 
-.button:hover {background-color: white}
+
+.link {
+  color:  #51d0de;
+  font: unbound;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 50px;
+  justify-self: center;
+  text-align: center;
+  font-family:  unbound;
+  font-size: 14px;
+  padding: 3px;
+  font-weight: bold;
+  text-align: center;
+  border: solid;
+  border-radius: 5%;
+}
+
+
+.link:hover {
+  background-color: white
+}
+
+.link:active {
+  background-color: #51d0de;
+  box-shadow: 0 5px #5252d4;
+  transform: translateY(4px);
+}
+
+.button:hover {
+  background-color: white
+}
 
 .button:active {
   background-color: #51d0de;
