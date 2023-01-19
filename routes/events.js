@@ -19,7 +19,7 @@ router.get('/:id', eventsCtrl.show)
 
 
 // localhost:3000/movies/:id/edit
-router.get("/:id/edit", eventsCtrl.edit)
+// router.get("/:id/edit", eventsCtrl.edit)
 
 // localhost:3000/movies/:id
 // router.put("/:id", eventsCtrl.update)

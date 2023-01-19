@@ -25,20 +25,6 @@ function deleteLocation(req, res) {
   })
 }
 
-function edit(req, res) {
-  Location.findById(req.params.id)
-  .then(location => {
-    res.render("events/edit", {
-      location: location,
-      title: "Edit Location"
-    })
-  })
-  .catch(err => {
-    console.log(err)
-    res.redirect("/")
-  })
-}
-
 
 function create(req, res) {
   Location.create(req.body)
@@ -66,7 +52,7 @@ function show(req, res) {
   function update(req, res) {
   Location.findByIdAndUpdate(req.params.id, req.body, {new: true})
   .then(location => {
-    res.redirect(`/locations/${location._id}`)
+    res.redirect('/locations')
   })
   .catch(err => {
     console.log(err)
@@ -78,8 +64,7 @@ function show(req, res) {
 export {
   newLocation as new,
   deleteLocation as delete,
-  create,
-  edit, 
+  create, 
   show,
   update,
 }

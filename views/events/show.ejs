@@ -52,7 +52,11 @@
   <div>
     <%= event.title %> 
     <a href="/locations/<%= location._id %>/edit">
+      <form id="new-form" action="/events" method="POST">
+        <label for="name-input">Event:</label>
+        <input required type="string" name="name" id="name-input">
       <button>Edit Location</button>
+  
     </a>
     <td>
       <a href="/locations/<%= location._id %>">DETAILS</a></td>
