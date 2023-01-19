@@ -78,11 +78,11 @@ function show(req, res) {
 function deleteEvent(req, res) {
   Event.findByIdAndDelete(req.params.id)
   .then(event => {
-    res.redirect("/events")
+    res.redirect("/")
   })
   .catch(err => {
     console.log(err)
-    res.redirect("/events")
+    res.redirect("/")
   })
 }
 
