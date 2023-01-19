@@ -28,7 +28,7 @@
              <td> <%= location.name %></td>
             
              <td> <%= location.address %></td>
-             <td><a href="/locations/<%= location._id %>">DETAILS</a></td>
+             <td><a href="/locations/<%= location._id %>" class="link">DETAILS</a></td>
           <td>
             <form 
               action="/locations/<%= location._id %>?_method=DELETE"

@@ -27,7 +27,7 @@
           <td><%= event.attended %></td>
           <td><%= event.price %></td>
           <td><%= event.notes %></td>
-          <td><a href="events/<%= event._id %>">Event Details</button></td>
+          <td><a href="events/<%= event._id %>" class="link">Event Details</button></td>
             <td>
               <form 
             action="/events/<%= event._id %>?_method=DELETE" 

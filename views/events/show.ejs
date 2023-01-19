@@ -51,7 +51,7 @@
   </form>
   <div>
     <%= event.title %> 
-    <a href="/locations/<%= location._id %>/edit">
+    <a href="/locations/<%= location._id %>/edit" class="link">
       <form id="new-form" action="/events" method="POST">
         <label for="name-input">Event:</label>
         <input required type="string" name="name" id="name-input">
@@ -64,7 +64,7 @@
         </form>
     </a>
     <td>
-      <a href="/locations/<%= location._id %>">DETAILS</a></td>
+      <a href="/locations/<%= location._id %>" class="link">DETAILS</a></td>
           <td>
             <form 
               action="/locations/<%= location._id %>?_method=DELETE"
