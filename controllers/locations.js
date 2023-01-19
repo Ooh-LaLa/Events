@@ -28,7 +28,7 @@ function deleteLocation(req, res) {
 
 function create(req, res) {
   Location.create(req.body)
-  .then(location => { //meal isn't needed, but get in the habit for React!
+  .then(location => {
     res.redirect('/locations')
   })
 }

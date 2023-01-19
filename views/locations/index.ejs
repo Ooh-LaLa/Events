@@ -9,7 +9,7 @@
     <input type="text" name="name" id="name-input">
     <label for="address-input">Address:</label>
     <input type="text" name="address" id="address-input">
-    <button type="submit">Add Location</button>
+    <class="button" type="submit">Add Location</button>
   </form>
     <% if (locations.length) { %>
      <h3>Locations</h3>
@@ -34,7 +34,7 @@
               action="/locations/<%= location._id %>?_method=DELETE"
               method="POST"
             >
-              <button>X</button>
+              <class="button">X</button>
             </form>
           </td>
            </tr>

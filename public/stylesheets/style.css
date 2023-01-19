@@ -36,6 +36,18 @@ body {
   width: 450px;
 }
 
+.this-week {
+  display: flex;
+  flex-direction: center;
+  margin-top: 200px;
+  height: 450px;
+  justify-content: center;
+  align-items: center;
+  width: 450px;
+  margin-left: 600px;
+  margin-right: center;
+}
+
 nav {
   background-color: #e0474c;
   color: #51d0de;
@@ -76,6 +88,21 @@ main {
 
 .right {
   margin-left: auto;
+}
+
+.button {
+  color:  yellow;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    justify-self: center;
+    text-align: center;
+    font-family:  unbound;
+    font-size: 14px;
+    padding: 3px;
+    font-weight: bold;
 }
 
 
