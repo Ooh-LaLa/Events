@@ -12,7 +12,7 @@ html {
 }
 
 body {
-  background-color:  #dccfcc;
+  background-color:  white;
   color: #5252d4;
   /* Use a system font, if none are available use any found sans-sarif font */
   font-family: unbounded, sans-serif;
@@ -20,14 +20,20 @@ body {
 }
 
 .h1 {
-
-align-items: center;
-
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-self: center;
 }
 
 .doStuff {
-
-
+  height: 450px;
+  margin-top: 15%;
+  width: 450px;
 }
 
 nav {
@@ -41,6 +47,7 @@ nav {
   margin-right: auto;
   padding: 10px;
   min-height: 60px;
+  font-weight: bold;
 }
 
 nav > a {
@@ -57,6 +64,7 @@ nav > a {
   justify-self: center;
   margin-left: auto;
   margin-right: auto;
+  font-weight: bold;
 }
 
 main {
