@@ -19,17 +19,32 @@ body {
   margin: 0;
 }
 
+.h1 {
+
+align-items: center;
+
+}
+
+.doStuff {
+
+
+}
+
 nav {
-  background-color:  #bf4aa8;
+  background-color: #e0474c;
   color: #51d0de;
   display: flex;
   align-items: center;
+  justify-content: center;
+  justify-self: center;
+  margin-left: auto;
+  margin-right: auto;
   padding: 10px;
   min-height: 60px;
 }
 
-nav.button {
-  background-color: black; 
+nav > a {
+  background-color: white; 
   border: none;
   color:   #51d0de;
   padding: 15px 32px;
@@ -37,6 +52,11 @@ nav.button {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+  align-items: center;
+  justify-content: center;
+  justify-self: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 main {
