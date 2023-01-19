@@ -5,7 +5,7 @@ _To start planning, [click](https://events-application.fly.dev/)[here]_
 
 
 
-![](assets/ScreenShot.png)
+![](images/ScreenShot.png)
 
 
 
@@ -41,4 +41,4 @@ To start planning, add a spot you'd like to visit by clicking the "Add Location"
 
 
 
-## Credits:
+_[Planning](https://events-application.fly.dev/)[Materials]_
