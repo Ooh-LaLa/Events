@@ -1,11 +1,11 @@
  📅 Events App! 
 
 
-_To start planning, [click](https://events-application.fly.dev/)[here]_
+_To start planning, [click here](https://events-application.fly.dev/)_
 
 
 
-![](images/ScreenShot.png)
+![](../images/screenshot.png)
 
 
 
@@ -41,4 +41,4 @@ To start planning, add a spot you'd like to visit by clicking the "Add Location"
 
 
 
-_[Planning](https://events-application.fly.dev/)[Materials]_
+_[Planning Materials](https://trello.com/b/Zq197qsS/events#)_
