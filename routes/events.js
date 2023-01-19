@@ -1,8 +1,11 @@
 import { Router } from 'express'
 import * as eventsCtrl from '../controllers/events.js'
+import { isLoggedIn } from '../middleware/middleware.js'
+
 
 const router = Router()
 
+router.post('/', isLoggedIn, eventsCtrl.create)
 
 // GET /events/new
 router.get('/new', eventsCtrl.new)
