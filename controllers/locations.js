@@ -1,4 +1,5 @@
 import { Location } from '../models/location.js'
+import { User } from '../models/user.js'
 
 function newLocation(req, res) {
   Location.find({})
@@ -28,6 +29,15 @@ function deleteLocation(req, res) {
 
 
 function create(req, res) {
+  User.findByIdAndDelete(req.user._id)
+  .then(location => {
+    res.redirect("/locations")
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect("/locations")
+  })
+  return
   req.body.owner = req.user.profile._id
   Location.create(req.body)
   .then(location => {
