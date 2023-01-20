@@ -19,7 +19,9 @@ function newEvent(req, res) {
 }
 
 function create(req, res) {
+  req.body.owner = req.user.profile._id
   console.log("REQ.BODY", req.body)
+
   for (let key in req.body) { 
     if (req.body[key] === '') delete req.body[key]
   }
@@ -110,4 +112,16 @@ export {
   show,
   deleteEvent as delete, 
   edit,
+}
+
+
+
+if (event.owner.equals(req.user.profile._id)) {
+  
+  .then(()=> {
+    res.redirect(`/events/${event._id}`)
+  })
+} else {
+  throw new Error('🚫 Not authorized 🚫')
+  res.redirect("/")
 }

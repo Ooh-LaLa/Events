@@ -27,6 +27,7 @@ function deleteLocation(req, res) {
 
 
 function create(req, res) {
+  req.body.owner = req.user.profile._id
   Location.create(req.body)
   .then(location => {
     res.redirect('/locations')
