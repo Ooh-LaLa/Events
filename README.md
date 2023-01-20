@@ -38,6 +38,7 @@ To start planning, add a spot you'd like to visit by clicking the "Add Location"
 - Add a user rating based on desirability of attending event
 - Mobile responsive design
 - Add API to link images to event's website
+- Ensure in the deleteLocation controller that no other user can edit or delete location
 
 
 
