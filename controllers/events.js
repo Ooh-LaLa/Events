@@ -84,10 +84,10 @@ function deleteEvent(req, res) {
   .then(event => {
     res.redirect("/")
   })
-  .catch(err => {
-    console.log(err)
-    res.redirect("/")
-  })
+.catch(err => {
+  console.log(err)
+  res.redirect("/")
+})
 }
 
 function edit(req, res) {
@@ -116,12 +116,12 @@ export {
 
 
 
-if (event.owner.equals(req.user.profile._id)) {
+// if (event.owner.equals(req.user.profile._id)) {
   
-  .then(()=> {
-    res.redirect(`/events/${event._id}`)
-  })
-} else {
-  throw new Error('🚫 Not authorized 🚫')
-  res.redirect("/")
-}
+//   .then(()=> {
+//     res.redirect(`/events/${event._id}`)
+//   })
+// } else {
+//   throw new Error('🚫 Not authorized 🚫')
+//   res.redirect("/")
+// }

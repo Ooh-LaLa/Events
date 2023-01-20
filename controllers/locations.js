@@ -3,6 +3,7 @@ import { Location } from '../models/location.js'
 function newLocation(req, res) {
   Location.find({})
   .then(locations => {
+    console.log("Locations", locations);
     res.render('locations/index', {
       title: 'Add Location',
       locations: locations,
@@ -28,11 +29,19 @@ function deleteLocation(req, res) {
 
 function create(req, res) {
   req.body.owner = req.user.profile._id
+  for (let key in req.body) { 
+    if (req.body[key] === '') delete req.body[key]
+  }
   Location.create(req.body)
   .then(location => {
     res.redirect('/locations')
   })
+  .catch(err => {
+    console.log("error", err)
+    res.redirect('/')
+  })
 }
+
 
 function show(req, res) {
   Location.findById(req.params.id)

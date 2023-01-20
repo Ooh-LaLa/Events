@@ -10,6 +10,7 @@ const eventSchema = new Schema({
   date: {type: Date},
   price: {type: Number},
   notes: {type: String},
+  owner: {type: Schema.Types.ObjectId, ref: "Profile"}
 }, 
 {timestamps: true,
   })

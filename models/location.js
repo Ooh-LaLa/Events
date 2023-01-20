@@ -2,8 +2,10 @@ import mongoose from "mongoose"
 
 const Schema = mongoose.Schema
 
-const locationSchema = new Schema ({ name: { type: String },
+const locationSchema = new Schema ({ 
+  name: { type: String },
   address: { type: String },
+  owner: {type: Schema.Types.ObjectId, ref: "Profile"}
 }, {
   timestamps: true})
 

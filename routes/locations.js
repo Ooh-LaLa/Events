@@ -1,18 +1,19 @@
 import { Router } from 'express'
 import * as locationsCtrl from '../controllers/locations.js'
+import { isLoggedIn } from '../middleware/middleware.js'
 
 const router = Router()
 
-router.get('/', locationsCtrl.new)
+router.get('/', isLoggedIn, locationsCtrl.new)
 
-router.post('/', locationsCtrl.create)
+router.post('/', isLoggedIn, locationsCtrl.create)
 
-router.get('/:id', locationsCtrl.show)
+router.get('/:id', isLoggedIn, locationsCtrl.show)
 
 
-router.delete("/:id", locationsCtrl.delete)
+router.delete("/:id", isLoggedIn, locationsCtrl.delete)
 
-router.put("/:id", locationsCtrl.update)
+router.put("/:id", isLoggedIn, locationsCtrl.update)
 
 
 

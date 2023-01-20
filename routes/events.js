@@ -8,17 +8,17 @@ const router = Router()
 router.post('/', isLoggedIn, eventsCtrl.create)
 
 // GET /events/new
-router.get('/new', eventsCtrl.new)
+router.get('/new', isLoggedIn, eventsCtrl.new)
 
 
 // POST /events
-router.post('/new', eventsCtrl.create)
+router.post('/new', isLoggedIn, eventsCtrl.create)
 
 
 // localhost:3000/events/:id
-router.delete("/:id", eventsCtrl.delete)
+router.delete("/:id", isLoggedIn, eventsCtrl.delete)
 
-router.get('/:id', eventsCtrl.show)
+router.get('/:id', isLoggedIn, eventsCtrl.show)
 
 
 // localhost:3000/movies/:id/edit

@@ -28,14 +28,17 @@
              <td> <%= location.name %></td>
             
              <td> <%= location.address %></td>
-             <td><a href="/locations/<%= location._id %>" class="link">DETAILS</a></td>
-          <td>
+             <td>
+              <a href="/locations/<%= location._id %>" class="link">DETAILS</a></td>
+          <td> 
+            <% if (location.owner.equals(user.profile._id)) { %> 
             <form 
               action="/locations/<%= location._id %>?_method=DELETE"
               method="POST"
             >
               <button class="button">X</button>
             </form>
+            <% } %>
           </td>
            </tr>
          <% }) %>
