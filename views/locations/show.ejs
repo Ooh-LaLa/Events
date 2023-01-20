@@ -10,15 +10,18 @@
     method="POST"
   >
     <label for="name-input">Name:</label>
-    <input type="text" name="name" value="<%= location.name %>" id="name-input">
+    <input type="text" name="name" value="<%= location.name %>" id="name-input"  <% if (!location.owner.equals(user.profile._id)) { %> readonly <% } %> >
     <label for="address-input">Address:</label>
     <input 
       type="text" 
-      name="address"
+      name="address" 
       value="<%= location.address %>"
       id="address-input"
-    >
+      <% if (!location.owner.equals(user.profile._id)) { %> readonly <% } %>
+    >  
+    <% if (location.owner.equals(user.profile._id)) { %> 
     <button class="button" type="submit">Save Location</button>
+    <% } %>
   </form>
   <img class="location-details" src="../images/location-details.jpg" alt="location-details">
 </main>

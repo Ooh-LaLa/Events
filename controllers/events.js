@@ -38,13 +38,13 @@ function create(req, res) {
 
 
 function index(req, res) {
-  Event.find({})
+  Event.find({owner: req.user.profile })
   .populate('location')
   .then(events => {
     console.log("TEST", events);
     res.render('events/index', {
       events: events,
-      title: "All Events",
+      title: "My Events",
     })
   })
   .catch(error => {
